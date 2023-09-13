@@ -1,0 +1,45 @@
+{% extends 'script.html' %}
+{% load static %}
+{% block main %}
+{% include "menu.html" %}
+<main class="col-md-12 ms-sm-auto col-lg-12 mt-2"> 
+    <div class="container">
+        <p>Modifier un client</p>
+        <hr>
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+        
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-6">
+                    <div class="mb-2">
+                        <label for="username" class="form-label">Prénom</label>
+                        <input type="text" class="form-control"  id="username" name="username" value="{{agent.username}}" required>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-6">
+                    <div class="mb-2">
+                        <label for="first_name" class="form-label">Nom</label>
+                        <input type="text" class="form-control" id="name"name="first_name" value="{{agent.first_name}}" required>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-6">
+                    <div class="mb-2">
+                        <label for="last_name" class="form-label">Post-Nom</label>
+                        <input type="text" class="form-control" id="lastname" name="last_name" value="{{agent.last_name}}" required>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-6">
+                    <div class="mb-2">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" value="{{agent.email}}" required>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Modifier</button>
+        </form>
+    </div>
+</main>
+{% endblock main %}

@@ -1,0 +1,100 @@
+{% extends 'script.html' %}
+{% load static %}
+{% block main %}
+{% include "menuHome.html" %}
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    
+</div>
+<div class="container p-2">
+    <h1 class="h5 text-center">Espace detail </h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Type de colis</label>
+                    <input type="text" name="typeColi" id="typeColi" class="form-control" value="{{colis.typeColiId.typeColi}}" disabled required>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Lieu de départ</label>
+                    <input type="text" class="form-control" name="lieuDepart" id="lieuDepart" value="{{colis.villeEnvois.nomCity}}" disabled required>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Lieu d'arrivée</label>
+                    <input type="text" name="lieuArriver" id="lieuArriver" class="form-control" value="{{colis.villeDestine}}" disabled required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Expediteur *</label>
+                    <input type="text" class="form-control" name="expediteur" value="{{colis.expedi}}" disabled required>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Colis destiné à *</label>
+                    <input type="text" class="form-control" name="destinateur" value="{{colis.desti}}" disabled required>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Prix à payer</label>
+                    <input type="text" class="form-control" name="kilo" value="{{colis.kilo}}$" disabled required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Téléphone</label>
+                    <input type="text" class="form-control" name="telephone" value="{{colis.telephone}}" disabled  required>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Email</label>
+                    <input type="email" class="form-control" name="email" value="{{colis.email}}" disabled  required>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Date d'envois</label>
+                    <input type="text" class="form-control" name="created_coli" value="{{colis.created_coli}}" disabled required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Description *</label>
+                    <input type="text" class="form-control" name="description"  value="{{colis.description}}" disabled required>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Code coli *</label>
+                    <input type="email" class="form-control"  name="codeColi" value="{{colis.codeColi}}" disabled required>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label"> Image colis</label>
+                    <div class="mb-3 col_img1">
+                        <img alt="Image selectionner" src="{{colis.image.url}}" class="img-thumbnail" id="thumbnail">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </form>
+</div>
+
+
+{% endblock main %}

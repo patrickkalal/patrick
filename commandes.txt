@@ -1,0 +1,7 @@
+django-admin startproject nom_du_projet
+cd nom_du_projet
+python manage.py startapp colis
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser 
+python manage.py runserver

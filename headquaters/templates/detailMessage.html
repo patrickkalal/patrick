@@ -1,0 +1,36 @@
+{% extends 'script.html' %}
+{% load static %}
+{% block main %}
+{% include "menuHome.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail messange</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <main class="col-md-12 ms-sm-auto mt-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white text-center">Detail message</div>
+                        <div class="card-body">
+                            <div class="card">
+                                <div class="card-body">
+                                  <h5 class="card-title">Objet: {{contact.sujet}}</h5>
+                                  <p class="card-text"><strong>Message: </strong>{{contact.message}}</p>
+                                  <hr>
+                                  <p class="card-text"><strong>Expediteur noms: </strong>{{contact.noms}}</p>
+                                  <p class="card-text"><strong>Expediteur email: </strong>{{contact.mail}}</p>
+                                </div>
+                              </div>
+                        </div>    
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock main %}

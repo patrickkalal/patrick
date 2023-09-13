@@ -1,0 +1,79 @@
+{% extends 'script.html' %}
+{% load static %}
+{% block main %}
+{% include "menu.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+</head>
+<body>
+<header class="animation-area mt-2" style="background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('{% static 'images/banner.jpg'%}');">
+<h4 class="text-white text-center text2">Bienvenue</h4>
+    <p class="text-center text-white mt2 sous_text2">
+        Dans Notre application d'envoies des colis
+    </p>
+        <ul class="box-area">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </header>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-4 singleBlog">
+                <img src="{% static 'images/package.jpeg'%}" class="img-fluid img">
+                <div class="blogContent">
+                    <h3 class="text-center">COLIS EXPRESS</h3>
+                    <p class="text-center">J'envoie un colis en express avec le module d'affranchissement en ligne <br> Livraison rapide - Colis reçu dès le lendemain avant 10H1</p>
+                </div>
+            </div>
+            <div class="col-md-4 singleBlog">
+                <img src="{% static 'images/aerien.jpg'%}" class="img-fluid img">
+                <div class="blogContent">
+                    <h3 class="text-center">AÉRIEN</h3>
+                    <p class="text-center">Choisissez la destination et les dates de votre prochain envoies.<br><br><br></p>
+                </div>
+            </div>
+
+            <div class="col-md-4 singleBlog">
+                <img src="{% static 'images/FRET ROUTIER.jpeg'%}" class="img-fluid img">
+                <div class="blogContent">
+                    <h3 class="text-center">FRET ROUTIER</h3>
+                    <p class="text-center">Pour votre transport de fret routier c'est avoir l'assurance que votre marchandise sera transportée en toute sécurité et livrée à votre destinataire en temps et en heure.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12">
+            <h4 class="text-dark text-center">EFFICACITÉ ET RÉACTIVITÉ SONT NOTRE FORCE</h4>
+                <p class="text-center text-dark mt2 ">
+                Pour chaque demande, nous vous trouvons la solution la plus efficace, économique et avec une grande réactivité
+                </p>
+            </div>
+            
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-12">
+                <img src="{% static 'images/course.jpeg'%}" class="img-fluid">
+            </div>
+            
+        </div>
+    </div>
+    <div class="footer mt-4 g-2 text-center">
+        <div class="foot">
+            <a href="{% url 'home' %}"><img src="{% static 'images/icons8_Facebook_48px.png'%}" alt="" class="img_ico"></a>
+            <a href="{% url 'home' %}"><img src="{% static 'images/icons8_Instagram_48px.png'%}" alt="" class="img_ico"></a>
+            <a href="{% url 'home' %}"><img src="{% static 'images/icons8_Twitter_48px.png'%}" alt="" class="img_ico"></a>
+        </div>
+        <span class="">&copy;2022 - Students Project - all rights reserved.</span>
+    </div>
+</body>
+
+</html>
+{% endblock main %}

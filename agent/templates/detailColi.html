@@ -1,0 +1,46 @@
+{% extends 'script.html' %}
+{% load static %}
+{% block main %}
+{% include "menuHome.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail coli</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <main class="col-md-12 ms-sm-auto mt-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white text-center">Detail du coli</div>
+                        <div class="card-body">
+                            <div class="card" style="width: 20rem;">
+                                <div class="card-body">
+                                <img src="{{coli.image.url}}" class="card-img-top" alt="pas d'image">
+                                    <h5 class="card-title">Code: {{coli.codeColi}}</h5>
+                                    <p class="card-text"><strong>Type de colis: </strong> {{coli.typeColiId.typeColi}}</p>
+                                    <p class="card-text"><strong>Pays et ville d'envois: </strong>{{coli.villeEnvois.nomPaysId.nom}} - {{coli.villeEnvois.nomCity}}</p>
+                                    <p class="card-text"><strong>Pays et la ville destinée: </strong> {{coli.villeDestine}}</p>
+                                    <hr>
+                                    <p class="card-text"><strong>Nom expediteur: </strong> {{coli.expedi}}</p>
+                                    <p class="card-text"><strong>Nom destinateur: </strong> {{coli.desti}}</p>
+                                    <p class="card-text"><strong>Kilo: </strong> {{coli.kilo}}</p>
+                                    <p class="card-text"><strong>Total: </strong> {{coli.total}}.USD</p>
+                                    <hr>
+                                    <p class="card-text"><strong>Tél: </strong> {{coli.telephone}}</p>
+                                    <p class="card-text"><strong>Email: </strong> {{coli.email}}</p>
+                                    <p class="card-text"><strong>Date envoies: </strong> {{coli.created_coli}}</p>
+                                    <p class="card-text"><strong>Description: </strong> {{coli.description}}</p>
+                                </div>
+                              </div>
+                        </div>    
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock main %}

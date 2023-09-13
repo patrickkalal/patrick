@@ -1,0 +1,65 @@
+{% extends 'script.html' %}
+{% load static %}
+{% block main %}
+{% include "menu.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+</head>
+<body>
+    <hr>
+    <div class="row">
+        <h3 class="text-center">Contacter-nous ou envoyer nous un message</h3>
+    </div>
+    <div class="container">
+        <p class="text-center">Nous vous invitons à nous contacter pour étudier ensemble vos demandes de transports, établir un devis ou pour vous fournir des informations sur nos services. Notre équipe vous répondra dans les plus brefs délais.</p>
+        <div class="row">
+            <div class="col-12 col-md-7 col-lg-7 col-xl-7">
+                <img src="{% static 'images/send_message.jpg'%}" class="img-fluid"><br>
+                <i class="fas fa-map-marker-alt"></i> <span>Adresse : Bandal</span><br><br>
+                <i class="fas fa-mobile-alt"></i> <span>Tél: +243 827350513</span><br><br>
+                <i class="fas fa-envelope"></i> <span>Email: <a href="">patrick@gmail.com</a></span><br>
+            </div>
+            <div class="col-12 col-md-5 col-lg-5 col-xl-5 d-flex justify-content-center">
+                <div class="container" style="position: relative;  top: 3rem">
+                    <form action="" method="POST" enctype="multipart/form-data">   
+                        {% csrf_token %}        
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nom - Prénom</label>
+                            <input type="text" class="form-control" name="noms"  placeholder="Noms" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Email</label>
+                            <input type="text" class="form-control" name="mail"  placeholder="Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="sujet" class="form-label">Sujets</label>
+                            <input type="text" class="form-control" name="sujet" placeholder="Sujet" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="sujet" class="form-label">Message</label>
+                            <textarea name="message" id="" cols="30" rows="5" class="form-control" required></textarea>
+                        </div>
+                        <div class="mb-1">
+                            <input type="submit" class="form-control btn-primary" value="Envoyer" required>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer mt-4 g-2 text-center">
+        <div class="foot">
+            <a href="{% url 'contact' %}"><img src="{% static 'images/icons8_Facebook_48px.png'%}" alt="" class="img_ico"></a>
+            <a href="{% url 'contact' %}"><img src="{% static 'images/icons8_Instagram_48px.png'%}" alt="" class="img_ico"></a>
+            <a href="{% url 'contact' %}"><img src="{% static 'images/icons8_Twitter_48px.png'%}" alt="" class="img_ico"></a>
+        </div>
+        <span class="">&copy;2023 - Students Project - all rights reserved.</span>
+    </div>
+</body>
+</html>
+{% endblock main %}

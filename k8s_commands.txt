@@ -1,0 +1,13 @@
+Les commandes importantes de Kubernetes
+
+docker build -t username/image_name:version: Construire l'image
+docker rmi image : Commande pour supprimer une images
+docker push username/image_name:version: Mettre l'image sur docker hub
+kubectl apply -f . : Appliquer les configurations sur Kubernetes
+kubectl get all --all-namespaces: obtenir une liste de tous les objets Kubernetes
+kubectl get name_ressource : Obtenir une ressource
+kubectl delete name_ressource: Supprimer une ressource
+kompose convert -f .\docker-compose.yaml --out . : Outil Kompose permettant de générer les configurations k8s
+kubectl exec -it nom_pod -- bash: commande pour acceder au pod
+kubectl rollout restart deployments/name : restart un deploiement
+kubectl port-forward service/name port externe:port k8s : Lancer un pod de type cluster ip

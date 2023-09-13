@@ -1,0 +1,140 @@
+{% extends 'script.html' %}
+{% load static %}
+{% block main %}
+{% include "menuHome.html" %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu Home</title>
+    <link rel="stylesheet" href="{% static 'css/service.css' %}">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <strong class="text-center mt-2">Enregistre un colis</strong>
+            <hr>
+                <main class="col-md-12 ms-sm-auto mt-2">
+                    <div class="container">
+                        <form action="" method="post" enctype="multipart/form-data">
+                            {% csrf_token %} 
+                            {% if messages %}
+                                {% for message in messages %}
+                            <div class="alert alert-danger alert-dismissible fade show text-center mb-4" role="alert">
+                                {{message}}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                                {% endfor %}
+                            {% endif %}
+                            <div class="container">
+                                <div class="mb-2">
+                                    <i class="fas fa-solid fa-cube" style='cursor: pointer;'></i>
+                                    <label for="exampleFormControlInput1" class="form-label">Type de colis</label>
+                                    <select name="typeColi" id="typeColi" class="form-control" required>
+                                        <option value=""></option>
+                                        <option value="Aliments">Aliments</option>
+                                        <option value="Vetements">Vetements</option>
+                                        <option value="Materiels informatiques">materiels informatique</option>
+                                        <option value="Composant electroniques">Composant electroniques</option>
+                                        <option value="Accessoires">Accessoires</option>
+                                    </select>
+                                </div>
+                                <div class="mb-2">
+                                <i class="far fa-sharp fa-solid fa-flag" style='cursor: pointer;'></i>
+                                <label for="exampleFormControlInput1" class="form-label">Lieu de départ</label>
+                                    <select name="lieuDepart" id="lieuDepart" class="form-control" required>
+                                        <option value=""></option>
+                                        <option value="Belgique">Belgique</option>
+                                        <option value="France">France</option>
+                                        <option value="Canada">Canada</option>
+                                        <option value="Afrique du sud">Afrique du sud</option>
+                                        <option value="Tunisie">Tunisie</option>
+                                    </select>
+                                </div>
+                                <div class="mb-2">
+                                <i class="fas fa-sharp fa-solid fa-flag" style='cursor: pointer;'></i>
+                                <label for="exampleFormControlInput1" class="form-label">Lieu d'arrivée</label>
+                                    <select name="lieuArriver" id="lieuArriver" class="form-control" required>
+                                        <option value=""></option>
+                                        <option value="RDC">RDC</option>
+                                        <option value="Nigeria">Nigeria</option>
+                                        <option value="Angleterre">Angleterre</option>
+                                        <option value="Maroc">Moroc</option>
+                                        <option value="Irland">Irland</option>
+                                    </select>
+                                </div>
+                                <div class="mb-2">
+                                    <i class="fas fa-map-marker-alt" style='cursor: pointer;'></i>
+                                        <label for="exampleFormControlInput1" class="form-label">Ville D'arrivé</label>
+                                        <select name="villeArriver" class="form-control" required>
+                                            <option value=""></option>
+                                            <option value="Kinshasa">Kinshasa</option>
+                                            <option value="Abuja">Abuja</option>
+                                            <option value="Londre">Londre</option>
+                                            <option value="Maroc">Moroc</option>
+                                            <option value="Dublin">Dublin</option>
+                                        </select>
+                                    </div>
+                                <div class="mb-2">
+                                    <i class="far fa-solid fa-user"style='cursor: pointer;'></i>
+                                    <label for="exampleFormControlInput1" class="form-label">Expediteur *</label>
+                                    <input type="text" class="form-control" placeholder="Destiné à" name="expediteur" autocomplete="off" required>
+                                </div>
+                                <div class="mb-2">
+                                    <i class="fas fa-solid fa-user"style='cursor: pointer;'></i>
+                                    <label for="exampleFormControlInput1" class="form-label">Colis destiné à *</label>
+                                    <input type="text" class="form-control" placeholder="Destiné à" name="destinateur"  autocomplete="off" required>
+                                </div>
+                                <div class="mb-2">
+                                    <i class="fas fa-balance-scale"style='cursor: pointer;'></i>
+                                    <label for="exampleFormControlInput1" class="form-label">Kilo</label>
+                                    <input type="number" class="form-control" placeholder="Entrer le poid" name="kilo"  autocomplete="off" required>
+                                </div>
+                                <div class="mb-2">
+                                <i class="fas fa-duotone fa-mobile" style='cursor: pointer;'></i>
+                                    <label for="exampleFormControlInput1" class="form-label">Téléphone</label>
+                                    <input type="tel" class="form-control" placeholder="Numero de téléphone du destinateur" name="telephone" autocomplete="off" required>
+                                </div>
+                                <div class="mb-2">
+                                    <i class="fas fa-envelope" style='cursor: pointer;'></i>
+                                    <label for="exampleFormControlInput1" class="form-label">Email</label>
+                                    <input type="email" class="form-control" placeholder="Entrer email" name="email" autocomplete="off" required>
+                                </div>
+                                <div class="mb-2">
+                                    <i class="far fa-solid fa-clock" style='cursor: pointer;'></i>
+                                    <label for="exampleFormControlInput1" class="form-label">Date d'envois</label>
+                                    <input type="datetime-local" class="form-control" name="created_coli" autocomplete="off" required>
+                                </div>
+                                <div class="mb-2">
+                                    <i class="fas fa-chart-bar"style='cursor: pointer;'></i>
+                                    <label for="exampleFormControlInput1" class="form-label">Description *</label>
+                                    <input type="text" class="form-control" name="description"  placeholder="Description" autocomplete="off" required>
+                                </div>
+                                <div class="mb-2">
+                                    <i class="far fa-eye-slash" style='cursor: pointer;'></i>
+                                    <label for="exampleFormControlInput1" class="form-label">Code coli *</label>
+                                    <input type="password" class="form-control" name="codeColi"  autocomplete="off" required>
+                                </div>
+                                <div class="mb-2">
+                                    <i class="fas fa-image" style='cursor: pointer;'></i>
+                                    <label for="exampleFormControlInput1" class="form-label">Image</label>
+                                    <input type="file" class="form-control" name="image" id="fileImage" required>
+                                </div>
+                                <div class="mb-2 col_img1">
+                                    <img alt="Image selectionner" src="" class="img-thumbnail" id="thumbnail">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary" name="enregistre">Enregistre</button>
+                            </div>
+                        </form>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock main %}

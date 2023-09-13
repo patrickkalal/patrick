@@ -1,0 +1,67 @@
+{% extends 'script.html' %}
+{% load static %}
+{% block main %}
+{% include "menuHome.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste Colis</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <strong class="text-center mt-2">Colis enregistrées ou disponibles</strong>
+            <div class="container mt-2">
+                <form class="d-flex mx-1">
+                    <input class="form-control me-2" type="search" placeholder="Entrez le mot de passe du colis" name="recherche" autocomplete="off">
+                    <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+                <main class="col-md-12 ms-sm-auto  mt-4">
+                    <div class="table-responsive">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr class="th bg-primary text-white">
+                                    <td class="title">Images</td>
+                                    <td class="title">Type de colis</td>
+                                    <td class="title">Pays et ville d'envois</td>
+                                    <td class="title">Pays et la ville destinée</td>
+                                    <td class="title">Dates et heures</td>
+                                    <td class="title text-center" colspan="4">Traitement</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for coli in colis%}
+                                <tr class="text-dark">
+                                    <td><img src="{{coli.image.url}}" class="rounded-circle me-2 circle profil"></td>
+                                    <td>{{coli.typeColiId.typeColi}}</td>
+                                    <td>{{coli.villeEnvois.nomPaysId.nom}} - {{coli.villeEnvois.nomCity}}</td>
+                                    <td>{{coli.villeDestine}}</td>
+                                    <td>{{coli.created_coli}}</td>
+                                    <td class="text-end">
+                                        <a class="btn" href="{% url 'printFacturePdf' coli.id %}" role="button"><i class="fas fa-print"></i> </a>
+                                    </td>
+                                    <td class="text-end">
+                                        <a class="btn" href="{% url 'update_coli' coli.id %}" role="button"><i class="fas fa-edit"></i></a>
+                                    </td>
+                                    <td class="text-end">
+                                        <a class="btn" href="{% url 'detailColi' coli.id %}" role="button"><i class="fas fa-eye"></i></a>
+                                    </td>
+                                    <td class="text-end">
+                                        <a class="btn" href="{% url 'delete_coli' coli.id %}" role="button"><i class="far fa-trash-alt"></i></a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </main>
+        </div> 
+
+
+    </div>
+</body>
+</html>
+{% endblock main %}

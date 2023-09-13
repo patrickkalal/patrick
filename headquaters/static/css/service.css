@@ -1,0 +1,101 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.li{
+  padding: 0px 0px 0px 25px ;
+  position: relative;
+  font-family:Maiandra GD;
+}
+.List-link{
+  position: relative;
+  top: 6px;
+  font-family:Maiandra GD;
+  border-radius:2rem;
+  padding: 10px 15px;
+}
+.List-link:hover{
+  background-color: rgba(252, 4, 4, 0.2);
+  transition: 1s;
+  border-radius: 5px;
+}
+
+.animation-area .animation-area1{
+  height: 80vh;
+  width: 100%;
+  position: absolute ;
+  background-size: cover;
+  background-position: center;
+  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3));
+}
+.img
+{
+  width: 100%;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  transform: translate(-50,-50);
+  animation: zoom-out 3s linear infinite;
+}
+@keyframes zoom-out{
+  100%{
+      width: 100%;
+  }
+}
+.box1
+{
+  width: 600px;
+  position: absolute;
+  left: 100px;
+  top: 200px;
+  color: #fff;
+  animation: textup 12s linear infinite;
+  transform: translateY(100px);
+}
+.text2{
+  position: relative;
+  top: 35%;
+  font-family:Maiandra GD;
+  margin-bottom: 40px;
+  font-size: 4rem;
+  -webkit-text-stroke: 0.3vw;
+}
+.text-box span
+{
+    background: red;
+    height: 1px;
+    width: 100px;
+    position: absolute;
+    left: 0;
+}
+.sous_text2{
+  position: relative;
+  top: 32%;
+  font-family: Maiandra GD;
+  font-weight: bolder;
+  font-size: 2rem;
+}
+.colis{
+  position: relative;
+  top: 5rem;
+}
+.box{
+  position: relative;
+  top: 12rem;
+}
+.col_img1{
+  position: relative;
+  width: 10rem;
+  height: 10rem;
+}
+
+.footer{
+  position: relative;
+  height: 6rem;
+  width: 100%;
+  background-color: black;
+  color: whitesmoke;
+}
+.img_ico:hover{
+  transform: scale(1.4);
+}

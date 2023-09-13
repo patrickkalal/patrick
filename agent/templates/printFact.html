@@ -1,0 +1,82 @@
+{% extends 'script.html' %}
+{% load static %}
+{% block main %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facture</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="publics/images/icons8_Cydia_48px_2.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            padding: 10px;
+        }
+        .facture {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+        }
+        .facture-header {
+            text-align: center;
+        }
+        .facture-header h2 {
+            margin-bottom: 10px;
+        }
+        .facture-info {
+            margin-bottom: 20px;
+        }
+        .facture-info p {
+            margin-bottom: 5px;
+        }
+        .facture-table {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .facture-table th,
+        .facture-table td {
+            padding: 5px;
+            text-align: center;
+        }
+        .facture-total {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="facture">
+            <div class="facture-header">
+                <h2>COLIS APP</h2>
+            </div>
+            <div class="facture-info">
+                <p><strong>N°: XXX-{{numero_facture}}</strong></p>
+                <p><strong>Type de colis: </strong>{{facturations.typeColiId.typeColi}}</p>
+                <p><strong>Pays et ville d'envois: </strong>{{facturations.villeEnvois.nomPaysId.nom}} - {{facturations.villeEnvois.nomCity}}</p>
+                <p><strong>Pays et la ville destinée: </strong> {{facturations.villeDestine}}</p>
+                <p><strong>Nom expediteur: </strong> {{facturations.expedi}} <br> 
+                    <strong>Nom destinateur: </strong> {{facturations.desti}} <br> 
+                    <strong>Kilo: </strong> {{facturations.kilo}} <br>
+                    <strong>Total: </strong> {{facturations.total}}.USD <br>
+                    <strong>Tél: </strong> {{facturations.telephone}} <br>
+                    <strong>Email: </strong> {{facturations.email}} <br>
+                    <strong>Date envoies: </strong> {{facturations.created_coli}} <br>
+                    <strong>Description: </strong> {{facturations.description}} <br>
+                    <strong>Code: {{facturations.codeColi}}</strong>
+                </p>
+                <p></p>
+                
+                
+            </div>
+            
+            <div class="facture-total">
+                <p>Prix total: {{ facturations.total }}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock main %}

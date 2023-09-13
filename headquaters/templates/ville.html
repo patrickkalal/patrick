@@ -1,0 +1,80 @@
+{% extends 'script.html' %}
+{% load static %}
+{% block main %}
+{% include "menuHome.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ville</title>
+</head>
+<body>
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <main class="col-12 col-md-5 w-50 mt-4 mx-auto justify-content-center">
+                <div class="card">
+                    <div class="card-header bg-primary text-white text-center">Enregistre une ville</div>
+                        <div class="card-body">
+                            <form action="" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {% if messages %}
+                                {% for message in messages %}
+                                <div class="alert {{message.tags}} alert-dismissible fade show text-center mb-4" role="alert">
+                                    {{message}}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                                {% endfor %}
+                                {% endif %}
+                                <div class="container">
+                                    <div class="mb-2">
+                                        <select name="paysid" class='form-select'>   
+                                            {% for pay in pays %}
+                                                <option value="{{pay.id}}">{{pay.nom}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="mb-2">
+                                        <i class="fas fa-map-marker-alt" style='cursor: pointer;'></i>
+                                        <label for="exampleFormControlInput1" class="form-label">Ville</label>
+                                        <input type="text" class="form-control" placeholder="Entre le ville" name="nomCity" autocomplete="off" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <button type="submit" class="btn w-100 btn-primary">Enregistre</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card mt-2">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="table-responsive">
+                                        <table class="table table-sm">
+                                            <tbody>
+                                                <tr class="th">
+                                                    <td class="title">Pays</td> 
+                                                    <td class="title">Ville</td> 
+                                                    <td class="title">Action</td>
+                                                </tr>
+                                                {% for ville in villes %}
+                                                <tr>
+                                                    <td>{{ville.nomPaysId.nom | capfirst}}</td>
+                                                    <td>{{ville.nomCity | capfirst}}</td>
+                                                    <td>
+                                                        <a class="action text-secondary" href="{% url 'delete_ville' ville.id %}" role="button"><i class="far fa-trash-alt"></i></a>
+                                                    </td>
+                                                </tr>
+                                                {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock main %}

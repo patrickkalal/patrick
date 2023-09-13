@@ -1,0 +1,66 @@
+{% extends 'script.html' %}
+{% load static %}
+{% block main %}
+{% include "menu.html" %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service</title>
+  <link rel="stylesheet" href="{% static 'css/service.css' %}">
+</head>
+<body>
+  <hr>
+  <div class="container mt-4">
+    <div class="row">
+        <h3 class="text-center">NOS SERVICES</h3>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-5 col-lg-5">
+          <h5 class="">COURSES</h5>
+          <p class="mt-4">Une large gamme de véhicules permettra de livrer vos colis et palettes dans la 1/2 journée et nous avons toujours des véhicules disponibles pour vos urgences. Break, fourgon, grand volume, porteur, semi, plateaux et bras de grue sont à votre disposition.</p>
+          <h5 class="mt-4">AÉRIEN</h5>
+          <p class="mt-4">Pour vos envois internationaux, notre service aérien permettra d'expédier votre marchandise dans le monde entier dans un minimum de temps avec un service optimum. Nos connaissances à l'international, nous permettrons de résoudre toutes vos problématiques douanières tant à l'export qu'à l'import. </p>
+      </div>
+      <div class="col-12 col-md-5">
+          <div class="row">
+              <img src="{% static 'images/van.jpeg'%}" class="img-fluid mt-2" alt="...">
+              <img src="{% static 'images/airplane.jpeg'%}" class="img-fluid mt-2" alt="...">
+          </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-12 col-md-5">
+        <div class="row">
+            <img src="{% static 'images/fret_rotier1.jpg'%}" class="img-fluid mt-2" alt="...">
+            <img src="{% static 'images/car.jpeg'%}" class="img-fluid mt-2" alt="...">
+        </div>
+      </div>
+      <div class="col-12 col-md-5 col-lg-5">
+          <h5 class="">FRET ROUTIER</h5>
+          <p class="mt-4">Notre service fret permettra d'expédier votre marchandise dans toute la France en 24h et en 48h pour les destinations les plus éloignées. Vous bénéficierez de notre large réseau multimodal qui permettra d'acheminer vos palettes dans toute l'Europe et en afrique du nord en un minimum de délai. Notre entrepôt peut accueillir vos marchandises pour vos passages à quai, votre stock dormant ou vos opérations spéciales</p>
+          <h5 class="mt-4 colis">COLIS EXPRESS</h5>
+          <p class="mt-4 colis">Pour vos petits envois express de moins de 30 kg, profitez de nos tarifs préférentiels pour expédier vos plis ou colis express dans le monde entier. Nos partenariats avec de grandes entités vous permettent de profiter du service de ces grands groupes avec un suivi personnalisé par nos soins. </p>
+      </div>
+      
+      <div class="row">
+        <div class="col-12 col-md-12">
+          <img src="../publics/images/course.jpeg" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer text-center">
+    <div class="foot">
+      <a href="{% url 'service' %}"><img src="{% static 'images/icons8_Facebook_48px.png'%}" alt="" class="img_ico"></a>
+      <a href="{% url 'service' %}"><img src="{% static 'images/icons8_Instagram_48px.png'%}" alt="" class="img_ico"></a>
+      <a href="{% url 'service' %}"><img src="{% static 'images/icons8_Twitter_48px.png'%}" alt="" class="img_ico"></a>
+    </div>
+    <span class="">&copy;2022  - Students Project - all rights reserved.</span>
+  </div>
+</body>
+</html>
+{% endblock main %}

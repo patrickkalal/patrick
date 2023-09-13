@@ -1,0 +1,73 @@
+{% extends 'script.html' %}
+{% load static %}
+{% block main %}
+{% include "menu.html" %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarifs</title>
+    <link rel="stylesheet" href="{% static 'css/tarif.css' %}">
+</head>
+<body>
+    <header class="animation-area" style="background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('{% static 'images/banner5.jpg'%}');">
+        <h4 class="text-white text-center mt-4 sous_text2">Livraison à domicile ou ailleurs</h4>
+    </header>
+    <div class="container mt-4">
+        <div class="row">
+            <h3 class="text-center">NOS TARIFS : 1kg cout: {{tarif}}.USD</h3>
+        </div>
+        <hr>
+        <div class="row">
+            <p> Pour toute demande de renseignements complémentaires ou pour toute demande de cotation, n’hésitez pas à nous contacter en cliquant <a href="contact.php">ici</a> nous vous répondrons dans les plus brefs délais.</p>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-12 col-md-5 col-lg-5 col-xl-5 d-flex justify-content-center">
+                <img src="{% static 'images/banner3.jpg'%}" class="img-fluid">
+            </div>
+            <div class="col-12 col-md-7 d-flex justify-content-center">
+                <div class="row">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'images/van.jpeg'%}" class="card-img-top" alt="..." style="width: 100%;">
+                        <div class="card-body">
+                        <h5 class="card-title">FOURGON</h5>
+                            <p class="card-text">
+                                <span>Capacité : </span> 3 à 4 palettes 80 x 120 cm <br>
+                                <span>Charge utile :</span> 1500 kg <br>
+                                <span>Tarif foulée : </span> 77 € HT</p>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'images/carrier.jpeg'%}" class="card-img-top" alt="...">
+                        <h5 class="card-title">PORTEUR</h5>
+                        <div class="card-body">
+                            <p class="card-text">
+                                <span>Capacité :</span> 19 palettes 80 x 120 cm <br>
+                                <span>Charge utile :</span> 10 000 kg <br>
+                                <span>Tarif foulée :</span> 225 € HT <br>
+                                <span>Option :</span> Hayon
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <img src="{% static 'images/course.jpeg'%}" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    <div class="footer mt-4 g-2 text-center">
+        <div class="foot">
+            <a href="{% url 'tarif' %}"><img src="{% static 'images/icons8_Facebook_48px.png'%}" alt="" class="img_ico"></a>
+            <a href="{% url 'tarif' %}"><img src="{% static 'images/icons8_Instagram_48px.png'%}" alt="" class="img_ico"></a>
+            <a href="{% url 'tarif' %}"><img src="{% static 'images/icons8_Twitter_48px.png'%}" alt="" class="img_ico"></a>
+        </div>
+        <span class="">&copy;2022 - Students Project - all rights reserved.</span>
+    </div>
+</body>
+</html>
+{% endblock main %}
